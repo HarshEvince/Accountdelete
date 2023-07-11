@@ -1,0 +1,57 @@
+<div class="block-content clear">
+<p>
+<?php echo __('Do you want to permanently delete your account? If you are sure, click on below button.'); ?>  
+</p> 
+</div>
+<div class="actions-toolbar">
+    <button type="button" id="deleteaccount" role="add-address" title="Delete Account" class="action primary add">
+        <span><?php  echo __('Delete My Account'); ?></span>
+    </button>
+</div>
+<div class="block account_delete" id="accountdeletepopup" style="display: none;">
+    <div class="block-content">
+        <form action="<?php echo $block->getBaseUrl(); ?>accountdelete/index/confirmationmail" class="accountdelete-form" method="post" id="accountdelete-form" data-role="product-accountdelete-form" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}'  data-bind="scope: 'accountdelete-form'" >
+            <?php echo $block->getBlockHtml('formkey'); ?>
+            <?php echo $block->getChildHtml('form_fields_before')?>
+            <legend class="legend accdlt-legend"><span><?php /* @escapeNotVerified */ echo __("Why do you want to delete your account?"); ?></span></legend><br />
+            <fieldset data-hasrequired="" class="fieldset outofstock-fieldset">
+                <div class="field outofstock-field-customeremail required">
+                    <div class="control">
+                        <textarea rows="3" cols="40" class="input-text" id="reason_field" name="reason" placeholder="<?php echo __('Let us know the reason...'); ?>" value=""></textarea>
+                    </div>
+                </div>
+                <p><?php echo __('Note : Above field is not mandatory you can submit it blank.'); ?></p>
+                <div class="actions-toolbar outofstock-form-actions">
+                    <div class="primary actions-primary">
+                        <button class="action submit primary" type="submit"><span><?php /* @escapeNotVerified */ echo __('Submit'); ?></span></button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script>
+        require(
+                [
+                    'jquery',
+                    'Magento_Ui/js/modal/modal'
+                ],
+                function (
+                        $,
+                        modal
+                        ) {
+                    var options = {
+                        type: 'popup',
+                        responsive: true,
+                        innerScroll: true,
+                        modalClass: 'accountdeleteform',
+                        buttons: ''
+                    };
+                    var popup = modal(options, $('#accountdeletepopup'));
+                    $("#deleteaccount").on('click', function () {
+            				$("#accountdeletepopup").modal("openModal");
+                    });
+
+                }
+        );
+    </script>

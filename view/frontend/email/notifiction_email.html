@@ -1,0 +1,35 @@
+<!--@subject {{trans "Account Delete Notification Email"}} @-->
+<!--@vars {
+"var data.customer_name":"Customer Name",
+"var data.customer_email":"Customer Email",
+"var data.customer_id":"Customer Id",
+"var data.reason":"Reason",
+"template config_path=\"design\/email\/footer_template\"":"Email Footer Template",
+"template config_path=\"design\/email\/header_template\"":"Email Header Template"
+} @-->
+{{template config_path="design/email/header_template"}}
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+                <td align="center" valign="top" style="padding:20px 0 20px 0">
+                    <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650">
+                        <tr>
+                            <td valign="top">
+                                <h1 style="font-size:22px;font-weight:normal;line-height:22px;margin:0 0 11px 0;">{{trans "Hello Admin"}},</h1>
+                                {{trans "Account has been deleted by the customer, please check below details."}}
+                                <p></p>
+                                <br>
+                                <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="1" width="500">
+                                    <tr><td><b>{{trans "Customer ID"}} </b></td><td> {{var data.customer_id}} </td></tr>
+                                    <tr><td><b>{{trans "Customer Name"}} </b></td><td> {{var data.customer_name}} </td></tr>
+                                    <tr><td><b>{{trans "Customer Email"}} </b></td><td> {{var data.customer_email}} </td></tr>
+                                    {{if data.reason}}
+                                    <tr><td><b>{{trans "Reason"}} </b></td><td> {{var data.reason}} </td></tr>
+                                    {{/if}}
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+{{template config_path="design/email/footer_template"}}

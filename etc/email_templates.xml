@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="accountdelete_email_confirmationtemplate" label="Account Delete Confirmation Email Template" file="confirmation_email.html" type="html" module="Harsh_Accountdelete" area="frontend"/>
+    <template id="accountdelete_email_notificationtemplate" label="Account Delete Notification Email Template For Admin" file="notifiction_email.html" type="html" module="Harsh_Accountdelete" area="frontend"/>
+</config>

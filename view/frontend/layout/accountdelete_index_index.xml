@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="customer_account"/>
+	<body>
+		<referenceBlock name="customer-account-navigation-accountdelete-link">
+        <arguments>
+            <argument name="is_highlighted" xsi:type="boolean">true</argument>
+        </arguments>
+      </referenceBlock>
+		<referenceContainer name="content">
+			<block class="Magento\Framework\View\Element\Template" ifconfig="accountdelete/general/enable_in_frontend" name="index.index" template="Harsh_Accountdelete::index/index.phtml"/>
+		</referenceContainer>
+	</body>
+</page>
