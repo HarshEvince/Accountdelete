@@ -1,5 +1,5 @@
 {
-  "name": "harsh/module-accountdelete",
+  "name": "harshevince/module-accountdelete",
   "description": "Harsh Account Delete Extension",
   "license": [
         "OSL-3.0",
@@ -9,7 +9,7 @@
   "type": "magento2-module",
   "authors": [
         {
-            "name": "Harsh",
+            "name": "Harsh Evince",
             "email": "harshsharmamuz@outlook.com",
             "homepage": "http://www.harsh.com"
         }
@@ -20,7 +20,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Harsh\\Accountdelete\\": ""
+            "HarshEvince\\Accountdelete\\": ""
         }
     }
 }
